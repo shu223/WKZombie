@@ -86,7 +86,7 @@ class LoginViewController : UIViewController {
     }
     
     func outputResult(_ rows: [HTMLTableRow]) {
-        let columns = rows.flatMap { $0.columns?.first }
+        let columns = rows.compactMap { $0.columns?.first }
         performSegue(withIdentifier: "detailSegue", sender: columns)
     }
     
